@@ -4,10 +4,9 @@ steps:
     args:
       - '-c'
       - |
-        pwd
-        ls
-        touch fake_stackoverflow/src/main/resources/application.yml
-        echo "$$MY_SECRET" > fake_stackoverflow/src/main/resources/application.yml
+        mkdir -p src/main/resources
+        touch src/main/resources/application.yml
+        echo "$$MY_SECRET" > src/main/resources/application.yml
     secretEnv: ['MY_SECRET']
   - name: gradle:8-jdk21
     entrypoint: gradle
