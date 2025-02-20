@@ -15,7 +15,7 @@ steps:
     entrypoint: gradle
     args: ["assemble"]
   - name: gcr.io/cloud-builders/docker
-    args: ["build", "-t", "$LOCATION-docker.pkg.dev/$PROJECT_ID/$REPO_NAME/hello-spring", "--build-arg=JAR_FILE=build/libs/hellospring-1.0.0.jar", "."]
+    args: ["build", "-t", "$LOCATION-docker.pkg.dev/$PROJECT_ID/$REPO_NAME/hello-spring", "--build-arg=JAR_FILE=build/libs/app.jar", "."]
 
 # Secret Manager에서 비밀을 가져와 MY_SECRET 환경변수에 할당
 availableSecrets:
