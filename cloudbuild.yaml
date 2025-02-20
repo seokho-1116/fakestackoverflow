@@ -4,6 +4,8 @@ steps:
     args:
       - '-c'
       - |
+        pwd
+        ls
         touch fake_stackoverflow/src/main/resources/application.yml
         echo "$$MY_SECRET" > fake_stackoverflow/src/main/resources/application.yml
     secretEnv: ['MY_SECRET']
