@@ -4,6 +4,7 @@ steps:
     args:
       - '-c'
       - |
+        touch src/main/resources/application.yml
         echo "$$MY_SECRET" > src/main/resources/application.yml
     secretEnv: ['MY_SECRET']
   - name: gradle:8-jdk21
